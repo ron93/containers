@@ -1,5 +1,9 @@
 body {
     background-color: black;
+    font-family: 'Poiret One', cursive;
+}
+.cd-title {
+    font-family: 'Bilbo Swash Caps', cursive;
 }
 
 /*==================================================================
@@ -7,7 +11,9 @@ headers
 */
 
 h1 {
+    color: yellow;
     text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 #top {
     background-image: url(img/download.jpg);
@@ -32,7 +38,9 @@ h1 {
 }
 .part-top {
     border: 2px solid aqua;
-    margin-left: 200px;
+    margin-left: 180px;
+    color: black;
+    font-size: 30px;
 }
 
 /*bottom*/
@@ -40,7 +48,6 @@ h1 {
 #bottom {
     border: 2px solid aqua;
     border-radius: 10px;
-    background-color: aqua;
     width: 400px;
     margin-left: 300px;
     margin-top: -150px;
@@ -49,16 +56,14 @@ h1 {
     padding-top: 20px;
     opacity: 0.5
 }
-.navigate-bottom {
-    opacity: 1;
-}
 .part-bottom {
     border: 2px solid aqua;
     border-radius: 5px;
     height: 30px;
     width: 80px;
     margin-left: 70px;
-    background-color: whitesmoke;
+    background-color: aqua;
+    font-size: 20px;
 }
 
 /*================================================================
@@ -100,7 +105,22 @@ content
     height: 300px;
     width: 900px;
     margin: 200px;
+    margin-top: -100px;
+}
+.stor1,
+.stor2,
+.stor3 {
+    border: 1px solid aqua;
+    height: 10px;
+    background-color: aqua;
+    opacity: 0.5;
+    color: black;
+    border-radius: 5px;
     margin-top: 10px;
+}
+p {
+    text-align: center;
+    font-size: 30px;
 }
 
 /*===contacts===*/
@@ -112,7 +132,7 @@ content
     height: 200px;
     width: 900px;
     margin: 200px;
-    margin-top: 10px;
+    margin-top: -100px;
     text-align: center;
 }
 .con {
@@ -123,6 +143,7 @@ content
     color: black;
     border-radius: 5px;
     margin: 5px;
+    font-size: 17px;
 }
 
 /*==================================================================images*/
@@ -136,7 +157,7 @@ h1 {
 .img4,
 .img6 {
     float: right;
-    margin-top: -320px;
+    margin-top: -315px;
 }
 .text {
     width: 340px;
@@ -151,7 +172,7 @@ h1 {
     background: url(img/pizza2.jpg) no-repeat;
 }
 .img2 {
-    background: url(img/hot-dog.jpg) no-repeat;
+    background: url(img/HOTDOGG.jpg) no-repeat;
 }
 .img3 {
     background: url(img/fried-chicken.jpg) no-repeat;
@@ -163,7 +184,7 @@ h1 {
     background: url(img/hamburger-potato-fries-cola-drink.jpg) no-repeat;
 }
 .img6 {
-    background: url(img/cofee-.jpg) no-repeat;
+    background: url(img/stake.jpg) no-repeat;
 }
 .img1,
 .img2,
@@ -208,5 +229,8 @@ h1 {
 /*==================================================================*/
 #map {
     height: 400px;
-    width: 600px;
+    width: 900px;
+    margin-left: 120px;
+    margin-top: -30px;
 }
+
