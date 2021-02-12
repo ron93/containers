@@ -1,5 +1,6 @@
-import time 
-import redis 
+import time
+
+import redis
 from flask import Flask
 
 app = Flask(__name__)
@@ -10,12 +11,13 @@ def get_hit_count():
     while True:
         try:
             return cache.incr('hits')
-            except redis.exception,ConnectionError as exc:
-                if retries == 0:
-                    raise exc
-                retries -= 1
-                time.sleep(0.5)
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
 
 @app.route('/')
 def hello():
-    return 'Hello World! i hav been seen {} times.\n'.format(count)
+    count = get_hit_count()
+    return 'Hello World! I have been seen {} times.\n'.format(count)
