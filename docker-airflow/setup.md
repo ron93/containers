@@ -5,7 +5,7 @@
 `mkdir ./dags ./logs ./plugins`
 
 **save configuration to env file**<br>
-`mkdir ./dags ./logs ./plugins`
+`echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env`
 
 **initialize app**
 `docker-compose up airflow-init`
