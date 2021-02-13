@@ -4,7 +4,7 @@ from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python import PythonOperator
 
 def greet():
-    print('Writing uin file')
+    print('Writing in file')
 
     with open('./file/greet.txt' , 'a+' ,encoding='utf8') as f:
         now = dt.datetime.now()
@@ -35,7 +35,7 @@ with DAG('simple-dag',
         ) as dag:
 
         #operator with assigned task ids
-        opr_hello = BashOperator(task_id = 'say hi',
+        opr_hello = BashOperator(task_id = 'say_Hi',
                                 bash_command='echo "Hi!!"')
 
     #python callable -- calls python functions above 
@@ -46,8 +46,8 @@ with DAG('simple-dag',
         opr_sleep = BashOperator(task_id='sleep_me',
                                 bash_command='sleep 5')
         
-        opr_respond = PythonOperator(task_id='respOnd',
+        opr_respond = PythonOperator(task_id='respond',
                                     python_callable=respond)
 
 
-opr_hello >> opr_greet >> opr_sleep >>opr_respond
+opr_hello >> opr_greet >> opr_sleep >> opr_respond
