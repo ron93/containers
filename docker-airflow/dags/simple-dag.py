@@ -7,7 +7,7 @@ def greet():
     print('Writing uin file')
 
     with open('./file/greet.txt' , 'a+' ,encoding='utf8') as f:
-        now = now.datetime.now()
+        now = dt.datetime.now()
         t = now.strftime("%Y-%m-%d %H:%M")
         f.write(str(t) + '\n')
     return 'Greeted'
@@ -26,3 +26,28 @@ default_args = {
     #no of retries incase of execution fail
     'retries' :0
 }
+
+#context manager  -- manages resources 
+#simple-dag -- dag id
+with DAG('simple-dag', 
+        default_args=default_args,
+        schedule_interval='*/10 * * * *',
+        ) as dag:
+
+        #operator with assigned task ids
+        opr_hello = BashOperator(task_id = 'say hi',
+                                bash_command='echo "Hi!!"')
+
+    #python callable -- calls python functions above 
+
+        opr_greet = PythonOperator(task_id='greet',
+                                python_callable=greet)
+        
+        opr_sleep = BashOperator(task_id='sleep_me',
+                                bash_command='sleep 5')
+        
+        opr_respond = PythonOperator(task_id='respOnd',
+                                    python_callable=respond)
+
+
+opr_hello >> opr_greet >> opr_sleep >>opr_respond
