@@ -7,5 +7,13 @@
 **save configuration to env file**<br>
 `mkdir ./dags ./logs ./plugins`
 
-
 **initialize app**
+`docker-compose up airflow-init`
+
+**run containers**
+`docker compose up` add `-d` to run in detach mode
+
+**access airflow web interface**
+`http://localhost:8080`
+- login:`airflow'
+- password:`airflow'
