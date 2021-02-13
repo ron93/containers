@@ -14,3 +14,15 @@ def greet():
 
 def respond():
     return 'Greet Responded Again'
+
+
+default_args = {
+
+    'owner' : 'airflow',
+    #date to start executing workflow
+    'start_date' : dt.datetime(2020, 2, 13, 12, 00),
+    #no. of processes -- used when running multiple dags
+    'concurrency' : 1 ,
+    #no of retries incase of execution fail
+    'retries' :0
+}
